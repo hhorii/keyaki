@@ -102,10 +102,10 @@ checking = []
 while True:
     previous = checking
     checking = []
-    availabilities = driver.find_elements_by_xpath('//*[@class="switch-off"]')
 
+    availabilities = driver.find_elements_by_xpath('//*[@class="switch-off" or @class="closed chars2"]')
     while len(availabilities) > 0:
-        if availabilities[0].text in ('○', '△', '－', '×', '＊'):
+        if availabilities[0].text in ('○', '△', '－', '×', '＊', '休館'):
             break
         availabilities.pop(0)
 
